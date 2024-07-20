@@ -9,8 +9,7 @@ header {
 
   .logo {
     color: var(--logo-color);
-    font-size: 1.625rem;
-    text-indent: 1px;
+    font-size: 1.625rem /* 26px */;
 
     transition: var(--transition-color);
   }
@@ -23,10 +22,14 @@ header {
     gap: 1rem;
 
     color: var(--theme-color);
-    font-size: 0.813rem;
-    letter-spacing: 0.156rem;
-    text-indent: 1px;
-    
+    font-size: 0.813rem /* 13px */;
+    letter-spacing: 0.156rem /* 2.5px */;
+
     animation: var(--ani-FadeIn);
+
+    transition: var(--transition-color);
+    &:hover {
+      color: var(--them-hover-color);
+    }
   }
 }

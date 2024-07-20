@@ -12,18 +12,24 @@
   --background-secondary: #1e2a47;
   --logo-color: #ffffff;
   --theme-color: #ffffff;
+  --them-hover-color: #90A4D4;
   --search-text-color: var(--theme-color);
+
   --name-color: var(--theme-color);
   --joined-color: var(--theme-color);
+
   --description-color: var(--theme-color);
+
   --user-info-header-color: var(--theme-color);
   --user-info-color: var(--theme-color);
+
   --user-social-svg-color: var(--theme-color);
   --user-social-color: var(--theme-color);
 
   --transition-color: color 0.3s linear;
   --transition-background-color: background 0.3s linear;
   --ani-FadeIn: fadeIn 0.2s linear forwards;
+  --ani-FadeInOut: fadeInOut 1s linear infinite;
 }
 
 [data-theme='light'] {
@@ -31,11 +37,19 @@
   --background-secondary: #ffffff;
   --logo-color: #222731;
   --theme-color: #4b6a9b;
+  --them-hover-color: #222731;
+  --name-color: #2b3442;
+  --joined-color: #697c9a;
+  --user-info-color: var(--name-color);
 }
 
 body {
   display: flex;
   justify-content: center;
+  @media (min-width: 768px) {
+    align-items: center;
+    min-height: 80vh;
+  }
 
   padding-inline: 1.5rem;
 
@@ -48,11 +62,26 @@ body {
   }
 }
 
+.box-shadow {
+  box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.19);
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
   }
   to {
+    opacity: 1;
+  }
+}
+@keyframes fadeInOut {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
     opacity: 1;
   }
 }

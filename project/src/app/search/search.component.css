@@ -14,7 +14,18 @@
 
   transition: var(--transition-background-color);
 
+  &.searching {
+    pointer-events: none;
+  }
+
+  &:focus-within {
+    button:last-of-type {
+      background-color: #60abff;
+    }
+  }
+
   button {
+    cursor: pointer;
     background-color: transparent;
     border: none;
     &:first-of-type {
@@ -28,28 +39,77 @@
       padding: 0.781rem 1rem;
 
       color: white;
-      font-size: 0.875rem;
+      font-size: 0.875rem /* 14px */;
       text-indent: 1px;
       font-weight: bold;
+
+      transition: var(--transition-background-color);
+
+      &:hover {
+        background-color: #60abff;
+      }
+
+      @media (min-width: 768px) {
+        font-size: 1rem /* 16px */;
+      }
+    }
+    &.searching {
+      pointer-events: none;
+      animation: var(--ani-FadeInOut);
     }
   }
 
-  input {
+  .input-field {
     width: 100%;
+    position: relative;
 
-    background-color: transparent;
-    border: none;
-    outline: none;
+    &.failed {
+      &::after {
+        content: 'No results';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--background-secondary);
+        padding-left: 0.5rem;
+        text-align: center;
+        color: red;
+        font-size: 0.938rem;
+        font-weight: bold;
 
-    font-size: 0.813rem;
-    line-height: 1.563rem;
-    color: var(--search-text-color);
+        transition: var(--transition-background-color);
 
-    transition: var(--transition-color);
+        @media (min-width: 768px) {
+          right: 24px;
+        }
+      }
+    }
+    input {
+      width: 100%;
 
-    &::placeholder {
+      background-color: transparent !important;
+      border: none;
+      outline: none;
+
+      font-size: 0.813rem /* 13px */;
+      line-height: 1.563rem;
       color: var(--search-text-color);
+
+      caret-color: #0079ff;
+
       transition: var(--transition-color);
+
+      @media (min-width: 768px) {
+        font-size: 1.125rem /* 18px */;
+      }
+
+      &::placeholder {
+        color: var(--search-text-color);
+        transition: var(--transition-color);
+      }
     }
   }
 }
