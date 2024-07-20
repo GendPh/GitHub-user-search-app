@@ -1,3 +1,8 @@
+*:not(figure) {
+  overflow-wrap: break-word;
+  overflow: hidden;
+}
+
 #user-result {
   display: grid;
   width: 100%;
@@ -160,11 +165,12 @@
     display: grid;
     gap: 1rem;
 
+    max-width: 480px;
+
     figure {
       display: flex;
       align-items: center;
-      gap: 0.813rem;
-
+      gap: 1rem;
       &:first-of-type {
         margin-bottom: 1rem /* 16px */;
       }
@@ -173,7 +179,6 @@
         font-size: 0.813rem /* 13px */;
         font-weight: 400;
         color: var(--user-social-color);
-
         @media (min-width: 768px) {
           font-size: 0.938rem /* 15px */;
         }
@@ -192,7 +197,7 @@
       }
     }
     @media (min-width: 768px) {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, 207.5px);
       gap: 4.063rem /* 65px */;
 
       figure {
