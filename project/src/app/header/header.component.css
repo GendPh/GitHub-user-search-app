@@ -1,0 +1,32 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1.938rem 0;
+
+  font-weight: bold;
+
+  .logo {
+    color: var(--logo-color);
+    font-size: 1.625rem;
+    text-indent: 1px;
+
+    transition: var(--transition-color);
+  }
+
+  .theme-toggle {
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    color: var(--theme-color);
+    font-size: 0.813rem;
+    letter-spacing: 0.156rem;
+    text-indent: 1px;
+    
+    animation: var(--ani-FadeIn);
+  }
+}

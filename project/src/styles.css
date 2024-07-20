@@ -1,1 +1,58 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Standar is dark Mode */
+:root {
+  --background: #141d2f;
+  --background-secondary: #1e2a47;
+  --logo-color: #ffffff;
+  --theme-color: #ffffff;
+  --search-text-color: var(--theme-color);
+  --name-color: var(--theme-color);
+  --joined-color: var(--theme-color);
+  --description-color: var(--theme-color);
+  --user-info-header-color: var(--theme-color);
+  --user-info-color: var(--theme-color);
+  --user-social-svg-color: var(--theme-color);
+  --user-social-color: var(--theme-color);
+
+  --transition-color: color 0.3s linear;
+  --transition-background-color: background 0.3s linear;
+  --ani-FadeIn: fadeIn 0.2s linear forwards;
+}
+
+[data-theme='light'] {
+  --background: #f6f8ff;
+  --background-secondary: #ffffff;
+  --logo-color: #222731;
+  --theme-color: #4b6a9b;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+
+  padding-inline: 1.5rem;
+
+  font-family: 'Space Mono', monospace;
+  background: var(--background);
+
+  transition: var(--transition-background-color);
+  app-root {
+    width: min(100%, 730px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
